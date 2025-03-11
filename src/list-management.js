@@ -11,6 +11,8 @@ const listArray = [
     },
 ];
 
+const getList = () => listArray;
+
 //ADD TODO ITEM TO LIST
 function addToList(todoItem) {
     listArray.push(todoItem);
@@ -26,4 +28,4 @@ function newTodoItem(title, description, priority, completion) {
     };
 }
 
-export { addToList };
+export { addToList, getList };
