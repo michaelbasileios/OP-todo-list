@@ -11,10 +11,12 @@ const listArray = [
     },
 ];
 
+//ADD TODO ITEM TO LIST
 function addToList(todoItem) {
     listArray.push(todoItem);
 }
 
+//CREATE NEW TODO ITEM OBJECT
 function newTodoItem(title, description, priority, completion) {
     return {
         title,
