@@ -2,7 +2,7 @@ const listArray = [
     {
         Title: "Clean Room",
         Description: "Make bed, dust off floor and surfaces",
-        Completion: false,
+        Completion: true,
     },
     {
         Title: "Feed Dogs",

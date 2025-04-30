@@ -26,9 +26,14 @@ function generateHTMLElement(todoListObject) {
                 todoItemCard.appendChild(priorityElement);
                 break;
             case "Completion":
-                const completionStatusElement = document.createElement('h4');
-                completionStatusElement.textContent = value ? "Complete" : "Incomplete";
-                todoItemCard.appendChild(completionStatusElement);
+                const completionStatusLabel = document.createElement('label');
+                completionStatusLabel.textContent = value ? "Complete" : "Incomplete";
+                const completionStatusElement = document.createElement('input');
+                completionStatusElement.type = 'checkbox';
+                completionStatusElement.name = 'completionStatusCheckbox';
+                completionStatusElement.checked = value ? true : false;
+                completionStatusLabel.append(completionStatusElement);
+                todoItemCard.append(completionStatusLabel);
                 break;
             default:
                 const defaultElement = document.createElement('div');
