@@ -5,6 +5,7 @@ function renderList(array) {
 
 function generateHTMLElement(todoListObject) {
     const todoItemCard = document.createElement("div");
+    todoItemCard.classList.add('todoItemDiv');
     for (const key in todoListObject) {
         const value = todoListObject[key];
 

@@ -35,3 +35,19 @@ header, footer {
     display: grid;
     align-items: center;
 }
+
+#list-container {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.todoItemDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.todoItemDiv > * {
+    text-align: left;
+}
