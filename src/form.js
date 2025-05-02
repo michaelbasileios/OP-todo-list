@@ -1,4 +1,10 @@
-function form() {
+const formDialog = () => {
+    const formDialog = document.createElement('dialog');
+    formDialog.id = 'form-dialog';
+    formDialog.append(form());
+}
+
+const formElements = () => {
     const todoForm = document.createElement('form');
     todoForm.id = 'todo-form';
     todoForm.method = 'dialog';
@@ -33,9 +39,11 @@ function form() {
 
     const formSubmitBtn = document.createElement('button');
     formSubmitBtn.id = 'submit-btn';
+    formSubmitBtn.textContent = 'Done';
     
     const formCancelBtn = document.createElement('button');
     formCancelBtn.id = 'cancel-btn';
+    formCancelBtn.textContent = 'Cancel';
 
     todoForm.append(
         formTitleLabel, 
@@ -45,4 +53,6 @@ function form() {
         formSubmitBtn,
         formCancelBtn
         );
+
+    return todoForm;
 }
