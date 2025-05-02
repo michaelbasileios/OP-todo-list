@@ -36,7 +36,7 @@ function propertyCheck(property, value, todoItemCard) {
             completionStatusLabel.textContent = value ? "Complete" : "Incomplete";
             const completionStatusElement = document.createElement('input');
             completionStatusElement.type = 'checkbox';
-            completionStatusElement.name = 'completionStatusCheckbox';
+            completionStatusElement.name = 'completion-status-checkbox';
             completionStatusElement.checked = value ? true : false;
             completionStatusLabel.append(completionStatusElement);
             todoItemCard.append(completionStatusLabel);
