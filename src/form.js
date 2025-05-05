@@ -13,6 +13,7 @@ const formElements = () => {
     todoForm.method = 'dialog';
     
     const formTitleLabel = document.createElement('label');
+    formTitleLabel.textContent = 'Title';
     const formTitleInput = document.createElement('input');
     formTitleInput.type = 'text';
     formTitleInput.classList = 'form-input-field';
@@ -20,6 +21,7 @@ const formElements = () => {
     formTitleLabel.append(formTitleInput);
 
     const formDescriptionLabel = document.createElement('label');
+    formDescriptionLabel.textContent = 'Description';
     const formDescriptionInput = document.createElement('input');
     formDescriptionInput.type = 'text';
     formDescriptionInput.classList = 'form-input-field';
@@ -27,6 +29,7 @@ const formElements = () => {
     formDescriptionLabel.append(formDescriptionInput);
 
     const formPriorityLabel = document.createElement('label');
+    formPriorityLabel.textContent = 'Priority';
     const formPriorityInput = document.createElement('input');
     formPriorityInput.type = 'number';
     formPriorityInput.classList = 'form-input-field';
@@ -34,6 +37,7 @@ const formElements = () => {
     formPriorityLabel.append(formPriorityInput);
 
     const formCompletionLabel = document.createElement('label');
+    formCompletionLabel.textContent = 'Completed';
     const formCompletionCheckbox = document.createElement('input');
     formCompletionCheckbox.type = 'checkbox';
     formCompletionCheckbox.classList = 'form-input-field';
