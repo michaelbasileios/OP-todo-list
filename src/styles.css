@@ -51,3 +51,11 @@ header, footer {
 .todoItemDiv > * {
     text-align: left;
 }
+
+#new-todo-dlg-btn{
+    position: fixed;
+    width: fit-content;
+    height: fit-content;
+    right: 50px;
+    bottom: 250px;
+}
