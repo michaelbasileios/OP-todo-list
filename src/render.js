@@ -43,7 +43,7 @@ function propertyCheck(property, value, todoItemCard) {
             break;
         default:
             const defaultElement = document.createElement('div');
-            defaultElement.textContent = `${key}: ${value}`;
+            defaultElement.textContent = `${property}: ${value}`;
             todoItemCard.appendChild(defaultElement);
     }
 }

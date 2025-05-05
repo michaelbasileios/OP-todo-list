@@ -1,7 +1,7 @@
 const formDialog = () => {
     const formDialog = document.createElement('dialog');
     formDialog.id = 'form-dialog';
-    formDialog.append(form());
+    formDialog.append(formElements());
 }
 
 const formElements = () => {
