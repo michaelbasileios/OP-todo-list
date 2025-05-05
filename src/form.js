@@ -1,7 +1,10 @@
 const formDialog = () => {
-    const formDialog = document.createElement('dialog');
-    formDialog.id = 'form-dialog';
-    formDialog.append(formElements());
+    const newTodoForm = document.querySelector('#new-todo-form');
+    const newTodoFormBtn = document.querySelector('#new-todo-dlg-btn');
+    newTodoForm.append(formElements());
+    newTodoFormBtn.addEventListener('click', () => {
+        newTodoForm.showModal();
+    })
 }
 
 const formElements = () => {
@@ -56,3 +59,5 @@ const formElements = () => {
 
     return todoForm;
 }
+
+export { formDialog }
