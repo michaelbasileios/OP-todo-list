@@ -1,5 +1,5 @@
 const formDialog = () => {
-    const newTodoForm = document.querySelector('#new-todo-form');
+    const newTodoForm = document.querySelector('#new-todo-form-dlg');
     const newTodoFormBtn = document.querySelector('#new-todo-dlg-btn');
     newTodoForm.append(formElements());
     newTodoFormBtn.addEventListener('click', () => {
