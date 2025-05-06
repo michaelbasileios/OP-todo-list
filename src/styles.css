@@ -58,4 +58,17 @@ header, footer {
     height: fit-content;
     right: 50px;
     bottom: 250px;
+    box-shadow: 2px 2px 3px #999;
+}
+
+#new-todo-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;  
+    transform: translate(-50%, -50%);
+}
+
+#todo-form {
+    display: flex;
+    flex-direction: column;
 }
