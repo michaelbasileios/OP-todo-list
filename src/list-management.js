@@ -1,3 +1,5 @@
+import { renderList } from "./render";
+
 const listArray = [
     {
         Title: "Clean Room",
@@ -16,16 +18,17 @@ const getList = () => listArray;
 //ADD TODO ITEM TO LIST
 function addToList(todoItem) {
     listArray.push(todoItem);
+    renderList(getList());
 }
 
 //CREATE NEW TODO ITEM OBJECT
-function newTodoItem(title, description, priority, completion) {
-    return {
-        title,
-        description,
-        priority,
-        completion
-    };
-}
+// function newTodoItem(title, description, priority, completion) {
+//     return {
+//         title,
+//         description,
+//         priority,
+//         completion
+//     };
+// }
 
 export { addToList, getList };

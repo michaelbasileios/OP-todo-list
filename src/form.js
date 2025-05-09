@@ -1,3 +1,6 @@
+import { addToList as submitForm } from "./list-management";
+
+//operate dialog window
 const formDialog = () => {
     const newTodoForm = document.querySelector('#new-todo-form-dlg');
     const newTodoFormBtn = document.querySelector('#new-todo-dlg-btn');
@@ -7,6 +10,7 @@ const formDialog = () => {
     })
 }
 
+//create the form and its input elements
 const formElements = () => {
     const todoForm = document.createElement('form');
     todoForm.id = 'todo-form';
@@ -51,6 +55,17 @@ const formElements = () => {
     const formCancelBtn = document.createElement('button');
     formCancelBtn.id = 'cancel-btn';
     formCancelBtn.textContent = 'Cancel';
+
+    todoForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const newTodoItem = {
+            Title: formTitleInput.value,
+            Description: formDescriptionInput.value,
+            Priority: formPriorityInput.value,
+            Completion: formCompletionCheckbox.checked, 
+        }
+        submitForm(newTodoItem);
+    })
 
     todoForm.append(
         formTitleLabel, 

@@ -1,5 +1,6 @@
 function renderList(array) {
     const listContainerDiv = document.querySelector("#list-container");
+    listContainerDiv.textContent = '';
     array.forEach(item => listContainerDiv.appendChild(generateHTMLElement(item)));
 }
 
