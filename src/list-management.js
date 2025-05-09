@@ -21,4 +21,10 @@ function addToList(todoItem) {
     renderList(getList());
 }
 
-export { addToList, getList };
+//REMOVE TODO FROM ARRAY
+function deleteTodoItem(index) {
+    listArray.splice(index, 1);
+    renderList(getList());
+}
+
+export { addToList, getList, deleteTodoItem };

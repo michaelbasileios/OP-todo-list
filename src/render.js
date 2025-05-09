@@ -1,9 +1,11 @@
+//RENDER ARRAY OF TODOS ON PAGE
 function renderList(array) {
     const listContainerDiv = document.querySelector("#list-container");
     listContainerDiv.innerHTML = '';
     array.forEach(item => listContainerDiv.appendChild(generateHTMLElement(item)));
 }
 
+//GENERATE DOM ELEMENTS FOR EACH TODO ITEM
 function generateHTMLElement(todoListObject) {
     const todoItemCard = document.createElement("div");
     todoItemCard.classList.add('todoItemDiv');
