@@ -1,12 +1,13 @@
 import { addToList as submitForm } from "./list-management";
 
+const newTodoFormDlg = document.querySelector('#new-todo-form-dlg');
+const newTodoFormBtn = document.querySelector('#new-todo-dlg-btn');
+
 //operate dialog window
 const formDialog = () => {
-    const newTodoForm = document.querySelector('#new-todo-form-dlg');
-    const newTodoFormBtn = document.querySelector('#new-todo-dlg-btn');
-    newTodoForm.append(formElements());
+    newTodoFormDlg.append(formElements());
     newTodoFormBtn.addEventListener('click', () => {
-        newTodoForm.showModal();
+        newTodoFormDlg.showModal();
     })
 }
 
@@ -55,16 +56,22 @@ const formElements = () => {
     const formCancelBtn = document.createElement('button');
     formCancelBtn.id = 'cancel-btn';
     formCancelBtn.textContent = 'Cancel';
+    formCancelBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        newTodoFormDlg.close();
+        todoForm.reset();
+    })
 
     todoForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const newTodoItem = {
+        submitForm({
             Title: formTitleInput.value,
             Description: formDescriptionInput.value,
             Priority: formPriorityInput.value,
             Completion: formCompletionCheckbox.checked, 
-        }
-        submitForm(newTodoItem);
+        });
+        newTodoFormDlg.close();
+        todoForm.reset(); 
     })
 
     todoForm.append(

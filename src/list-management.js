@@ -21,14 +21,4 @@ function addToList(todoItem) {
     renderList(getList());
 }
 
-//CREATE NEW TODO ITEM OBJECT
-// function newTodoItem(title, description, priority, completion) {
-//     return {
-//         title,
-//         description,
-//         priority,
-//         completion
-//     };
-// }
-
 export { addToList, getList };
