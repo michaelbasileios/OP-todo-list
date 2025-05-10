@@ -1,4 +1,5 @@
 import { deleteTodoItem } from "./list-management";
+import { setStatus } from "./list-management";
 
 //RENDER ARRAY OF TODOS ON PAGE
 function renderList(array) {
@@ -15,6 +16,14 @@ function generateHTMLElement(todoListObject, index) {
         const value = todoListObject[property];
         propertyCheck(property, value, todoItemCard);
     }
+
+    const formCompletionLabel = document.createElement('label');
+    formCompletionLabel.textContent = 'Completed';
+    const formCompletionCheckbox = document.createElement('input');
+    formCompletionCheckbox.type = 'checkbox';
+    formCompletionCheckbox.classList = 'form-input-field';
+    formCompletionCheckbox.name = 'todo-complete-status';
+    formCompletionLabel.append(formCompletionCheckbox);
     
     const deleteTodoItemBtn = document.createElement('button');
     deleteTodoItemBtn.textContent = 'X'
@@ -22,7 +31,8 @@ function generateHTMLElement(todoListObject, index) {
     deleteTodoItemBtn.addEventListener('click', () => {
         deleteTodoItem(index);
     })
-    todoItemCard.append(deleteTodoItemBtn);
+    
+    todoItemCard.append(formCompletionLabel, deleteTodoItemBtn);
     
     return todoItemCard;
 }

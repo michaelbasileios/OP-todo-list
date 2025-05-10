@@ -41,13 +41,13 @@ const formElements = () => {
     formPriorityInput.name = 'todo-priority';
     formPriorityLabel.append(formPriorityInput);
 
-    const formCompletionLabel = document.createElement('label');
-    formCompletionLabel.textContent = 'Completed';
-    const formCompletionCheckbox = document.createElement('input');
-    formCompletionCheckbox.type = 'checkbox';
-    formCompletionCheckbox.classList = 'form-input-field';
-    formCompletionCheckbox.name = 'todo-complete-status';
-    formCompletionLabel.append(formCompletionCheckbox);
+    // const formCompletionLabel = document.createElement('label');
+    // formCompletionLabel.textContent = 'Completed';
+    // const formCompletionCheckbox = document.createElement('input');
+    // formCompletionCheckbox.type = 'checkbox';
+    // formCompletionCheckbox.classList = 'form-input-field';
+    // formCompletionCheckbox.name = 'todo-complete-status';
+    // formCompletionLabel.append(formCompletionCheckbox);
 
     const formSubmitBtn = document.createElement('button');
     formSubmitBtn.id = 'submit-btn';
@@ -68,7 +68,7 @@ const formElements = () => {
             Title: formTitleInput.value,
             Description: formDescriptionInput.value,
             Priority: formPriorityInput.value,
-            Completion: formCompletionCheckbox.checked, 
+            // Completion: formCompletionCheckbox.checked, 
         });
         newTodoFormDlg.close();
         todoForm.reset(); 
@@ -78,7 +78,7 @@ const formElements = () => {
         formTitleLabel, 
         formDescriptionLabel, 
         formPriorityLabel, 
-        formCompletionLabel,
+        // formCompletionLabel,
         formSubmitBtn,
         formCancelBtn
         );
