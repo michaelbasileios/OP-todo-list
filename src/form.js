@@ -41,14 +41,6 @@ const formElements = () => {
     formPriorityInput.name = 'todo-priority';
     formPriorityLabel.append(formPriorityInput);
 
-    // const formCompletionLabel = document.createElement('label');
-    // formCompletionLabel.textContent = 'Completed';
-    // const formCompletionCheckbox = document.createElement('input');
-    // formCompletionCheckbox.type = 'checkbox';
-    // formCompletionCheckbox.classList = 'form-input-field';
-    // formCompletionCheckbox.name = 'todo-complete-status';
-    // formCompletionLabel.append(formCompletionCheckbox);
-
     const formSubmitBtn = document.createElement('button');
     formSubmitBtn.id = 'submit-btn';
     formSubmitBtn.textContent = 'Done';

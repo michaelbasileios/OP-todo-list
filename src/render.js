@@ -17,13 +17,17 @@ function generateHTMLElement(todoListObject, index) {
         propertyCheck(property, value, todoItemCard);
     }
 
-    const formCompletionLabel = document.createElement('label');
-    formCompletionLabel.textContent = 'Completed';
-    const formCompletionCheckbox = document.createElement('input');
-    formCompletionCheckbox.type = 'checkbox';
-    formCompletionCheckbox.classList = 'form-input-field';
-    formCompletionCheckbox.name = 'todo-complete-status';
-    formCompletionLabel.append(formCompletionCheckbox);
+    const completionStatusLabel = document.createElement('label');
+    completionStatusLabel.textContent = 'Completed';
+    const compStatusCheckbox = document.createElement('input');
+    compStatusCheckbox.type = 'checkbox';
+    compStatusCheckbox.classList = 'todo-status-checkbox';
+    compStatusCheckbox.name = 'todo-complete-status';
+    compStatusCheckbox.value = false;
+    compStatusCheckbox.addEventListener('change', () => {
+        setStatus(index);
+    })
+    completionStatusLabel.append(compStatusCheckbox);
     
     const deleteTodoItemBtn = document.createElement('button');
     deleteTodoItemBtn.textContent = 'X'
@@ -32,7 +36,7 @@ function generateHTMLElement(todoListObject, index) {
         deleteTodoItem(index);
     })
     
-    todoItemCard.append(formCompletionLabel, deleteTodoItemBtn);
+    todoItemCard.append(completionStatusLabel, deleteTodoItemBtn);
     
     return todoItemCard;
 }
@@ -55,20 +59,20 @@ function propertyCheck(property, value, todoItemCard) {
             priorityElement.textContent = value;
             todoItemCard.appendChild(priorityElement);
             break;
-        case "Completion":
-            const completionStatusLabel = document.createElement('label');
-            completionStatusLabel.textContent = value ? "Complete" : "Incomplete";
-            const completionStatusElement = document.createElement('input');
-            completionStatusElement.type = 'checkbox';
-            completionStatusElement.name = 'completion-status-checkbox';
-            completionStatusElement.checked = value ? true : false;
-            completionStatusLabel.append(completionStatusElement);
-            todoItemCard.append(completionStatusLabel);
-            break;
-        default:
-            const defaultElement = document.createElement('div');
-            defaultElement.textContent = `${property}: ${value}`;
-            todoItemCard.appendChild(defaultElement);
+         case "Completion":
+        //     const compStatusCheckbox = document.querySelector('.todo-status-checkbox');
+        //     completionStatusLabel.textContent = value ? "Complete" : "Incomplete";
+        //     const completionStatusElement = document.createElement('input');
+        //     completionStatusElement.type = 'checkbox';
+        //     completionStatusElement.name = 'completion-status-checkbox';
+        //     compStatusCheckbox.checked = value;
+        //     completionStatusLabel.append(completionStatusElement);
+        //     todoItemCard.append(completionStatusLabel);
+        //     break;
+        // default:
+        //     const defaultElement = document.createElement('div');
+        //     defaultElement.textContent = `${property}: ${value}`;
+        //     todoItemCard.appendChild(defaultElement);
     }
 }
 

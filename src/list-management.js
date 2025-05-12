@@ -4,7 +4,7 @@ const listArray = [
     {
         Title: "Clean Room",
         Description: "Make bed, dust off floor and surfaces",
-        Completion: true,
+        Completion: false,
     },
     {
         Title: "Feed Dogs",
@@ -24,7 +24,6 @@ function addToList(todoItem) {
 //CHANGE COMPLETION STATUS OF TODO
 function setStatus(index) {
     listArray[index].Completion = !listArray[index].Completion;
-    renderList(getList());
 }
 
 //REMOVE TODO FROM ARRAY
