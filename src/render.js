@@ -23,7 +23,6 @@ function generateHTMLElement(todoListObject, index) {
     compStatusCheckbox.type = 'checkbox';
     compStatusCheckbox.classList = 'todo-status-checkbox';
     compStatusCheckbox.name = 'todo-complete-status';
-    compStatusCheckbox.value = false;
     compStatusCheckbox.addEventListener('change', () => {
         setStatus(index);
     })

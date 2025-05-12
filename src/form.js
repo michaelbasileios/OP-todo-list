@@ -60,7 +60,7 @@ const formElements = () => {
             Title: formTitleInput.value,
             Description: formDescriptionInput.value,
             Priority: formPriorityInput.value,
-            // Completion: formCompletionCheckbox.checked, 
+            Completion: false, 
         });
         newTodoFormDlg.close();
         todoForm.reset(); 
