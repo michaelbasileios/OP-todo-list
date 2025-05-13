@@ -1,4 +1,5 @@
 import { addToList as submitForm } from "./list-management";
+import { getProjectsArray } from "./projects";
 
 const newTodoFormDlg = document.querySelector('#new-todo-form-dlg');
 const newTodoFormBtn = document.querySelector('#new-todo-dlg-btn');
@@ -60,7 +61,8 @@ const formElements = () => {
             Title: formTitleInput.value,
             Description: formDescriptionInput.value,
             Priority: formPriorityInput.value,
-            Completion: false, 
+            Completion: false,
+            Project: getProjectsArray()[0], 
         });
         newTodoFormDlg.close();
         todoForm.reset(); 
@@ -70,7 +72,6 @@ const formElements = () => {
         formTitleLabel, 
         formDescriptionLabel, 
         formPriorityLabel, 
-        // formCompletionLabel,
         formSubmitBtn,
         formCancelBtn
         );
