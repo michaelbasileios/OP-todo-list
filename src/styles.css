@@ -36,6 +36,15 @@ header, footer {
     align-items: center;
 }
 
+#main-content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+#sidebar {
+    background-color: orange;
+}
+
 #list-container {
     display: grid;
     padding: 10px;

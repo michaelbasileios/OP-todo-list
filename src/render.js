@@ -5,7 +5,8 @@ import { setStatus } from "./list-management";
 function renderList(array) {
     const listContainerDiv = document.querySelector("#list-container");
     listContainerDiv.innerHTML = '';
-    array.forEach((item, index) => listContainerDiv.appendChild(generateHTMLElement(item, index)));
+    array.forEach((item, index) => 
+        listContainerDiv.appendChild(generateHTMLElement(item, index)));
 }
 
 //GENERATE DOM ELEMENTS FOR EACH TODO ITEM
