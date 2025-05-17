@@ -1,4 +1,4 @@
-const projectsArray = ["Default"];
+const projectsArray = ["Default", "Completed", "Not Completed"];
 
 const getProjectsArray = () => projectsArray;
 
