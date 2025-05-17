@@ -90,3 +90,8 @@ header, footer {
     flex-direction: row;
     justify-content:space-between;
 }
+
+#project-list {
+    list-style-type:circle;
+    font-weight: bold;
+}

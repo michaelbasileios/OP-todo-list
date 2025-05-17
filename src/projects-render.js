@@ -1,18 +1,16 @@
-import { getProjectsArray } from "./projects";
-
 const sidebarDiv = document.querySelector('#sidebar');
 
+//RENDER AN UNORDERED LIST OF THE ENTIRE PROJECT ARRAY
 function renderProjectList(array) {
     const projectList = document.createElement('ul');
     projectList.id = 'project-list';
     projectList.innerHTML = '';
-    sidebarDiv.append(projectList);
     array.forEach((item, index) => 
-        sidebarDiv.appendChild(generateListItem(item, index)));
+        projectList.appendChild(generateListItem(item, index)));
+    sidebarDiv.append(projectList);
 }
 
-
-
+//GENERATE LIST ITEM FOR EACH PROJECT IN ARRAY
 function generateListItem(project, index) {
     const projectListItem = document.createElement("li");
     projectListItem.classList.add('project-list-item');
