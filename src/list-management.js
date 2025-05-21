@@ -4,12 +4,14 @@ const listArray = [
     {
         Title: "Clean Room",
         Description: "Make bed, dust off floor and surfaces",
-        Completion: false,
+        Completion: true,
+        Project: "Completed",
     },
     {
         Title: "Feed Dogs",
         Description: "Chicken",
         Completion: false,
+        Project: "Not Completed",
     },
 ];
 
