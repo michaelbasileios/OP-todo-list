@@ -42,6 +42,20 @@ const formElements = () => {
     formPriorityInput.name = 'todo-priority';
     formPriorityLabel.append(formPriorityInput);
 
+    const formProjectLabel = document.createElement('label');
+    formProjectLabel.textContent = 'Project';
+    const formProjectInput = document.createElement('select');
+    formProjectInput.classList.add('form-input-field');
+    formProjectInput.name = 'projects';
+    const projectList = getProjectsArray();
+    projectList.forEach(project => {
+        const projectOption = document.createElement('option');
+        projectOption.value = project;
+        projectOption.textContent = project;
+        formProjectInput.append(projectOption);
+    })
+    formProjectLabel.append(formProjectInput);
+
     const formSubmitBtn = document.createElement('button');
     formSubmitBtn.id = 'submit-btn';
     formSubmitBtn.textContent = 'Done';
@@ -62,7 +76,7 @@ const formElements = () => {
             Description: formDescriptionInput.value,
             Priority: formPriorityInput.value,
             Completion: false,
-            Project: getProjectsArray()[0], 
+            Project: formProjectInput.value, 
         });
         newTodoFormDlg.close();
         todoForm.reset(); 
@@ -71,7 +85,8 @@ const formElements = () => {
     todoForm.append(
         formTitleLabel, 
         formDescriptionLabel, 
-        formPriorityLabel, 
+        formPriorityLabel,
+        formProjectLabel, 
         formSubmitBtn,
         formCancelBtn
         );
