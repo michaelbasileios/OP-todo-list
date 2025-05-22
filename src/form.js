@@ -22,7 +22,7 @@ const formElements = () => {
     formTitleLabel.textContent = 'Title';
     const formTitleInput = document.createElement('input');
     formTitleInput.type = 'text';
-    formTitleInput.classList = 'form-input-field';
+    formTitleInput.classList.add('form-input-field');
     formTitleInput.name = 'todo-title';
     formTitleLabel.append(formTitleInput);
 
@@ -30,7 +30,7 @@ const formElements = () => {
     formDescriptionLabel.textContent = 'Description';
     const formDescriptionInput = document.createElement('input');
     formDescriptionInput.type = 'text';
-    formDescriptionInput.classList = 'form-input-field';
+    formDescriptionInput.classList.add('form-input-field');
     formDescriptionInput.name = 'todo-description';
     formDescriptionLabel.append(formDescriptionInput);
 
@@ -38,7 +38,7 @@ const formElements = () => {
     formPriorityLabel.textContent = 'Priority';
     const formPriorityInput = document.createElement('input');
     formPriorityInput.type = 'number';
-    formPriorityInput.classList = 'form-input-field';
+    formPriorityInput.classList.add('form-input-field');
     formPriorityInput.name = 'todo-priority';
     formPriorityLabel.append(formPriorityInput);
 
@@ -61,6 +61,7 @@ const formElements = () => {
     formSubmitBtn.textContent = 'Done';
     
     const formCancelBtn = document.createElement('button');
+    formCancelBtn.type = 'button';
     formCancelBtn.id = 'cancel-btn';
     formCancelBtn.textContent = 'Cancel';
     formCancelBtn.addEventListener('click', (e) => {
