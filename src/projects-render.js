@@ -1,4 +1,5 @@
 import { getList } from "./list-management";
+import { setProject } from "./projects";
 import { renderList } from "./render";
 // import { getProjectsArray } from "./projects";
 
@@ -19,23 +20,12 @@ function generateListItem(project, index) {
     const projectListItem = document.createElement("li");
     projectListItem.classList.add('project-list-item');
     projectListItem.textContent = project;
-    projectListItem.addEventListener('click', () => renderSelectedProject(project));
+    projectListItem.addEventListener('click', () => {
+        setProject(project);
+        renderList(getList());
+    });
 
     return projectListItem;
-}
-
-//RENDER ONLY TODO ITEMS IN A SELECTED PROJECT
-const renderSelectedProject = (selectProject) => {
-    const todoList = getList();
-    if (selectProject === "Default") {
-        renderList(todoList);
-    } else {
-    const filteredList = todoList.filter(
-        listItem => listItem.Project === selectProject
-    );
-    console.log(filteredList);
-    renderList(filteredList);
-    } 
 }
 
 export { renderProjectList };

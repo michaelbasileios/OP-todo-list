@@ -1,12 +1,19 @@
 import { deleteTodoItem } from "./list-management";
 import { setStatus } from "./list-management";
+import { getSelectedProject } from "./projects";
 
 //RENDER ARRAY OF TODOS ON PAGE
 function renderList(array) {
     const listContainerDiv = document.querySelector("#list-container");
     listContainerDiv.innerHTML = '';
-    array.forEach((item, index) => 
-        listContainerDiv.appendChild(generateHTMLElement(item, index)));
+    const selectedProject = getSelectedProject();
+    array.forEach((item, index) => { //following code only renders todo items that match the selected project
+        if (selectedProject === "Default") {
+            listContainerDiv.appendChild(generateHTMLElement(item, index));
+        } else if (item.Project === selectedProject){
+            listContainerDiv.appendChild(generateHTMLElement(item, index));
+        }
+    });
 }
 
 //GENERATE DOM ELEMENTS FOR EACH TODO ITEM
