@@ -1,6 +1,6 @@
 import { renderProjectList } from "./projects-render";
 
-const projectsArray = ["Default", "Completed", "Not Completed"];
+const projectsArray = ["Default", "Completed", "Not Completed",];
 
 let selectedProject = 'Default';
 
@@ -14,6 +14,7 @@ const getSelectedProject = () => selectedProject;
 
 function createNewProject(newProject) {
     projectsArray.push(newProject);
+    console.log(projectsArray);
     renderProjectList(getProjectsArray());
 }
 

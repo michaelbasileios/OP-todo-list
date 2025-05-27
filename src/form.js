@@ -6,8 +6,9 @@ const newTodoFormBtn = document.querySelector('#new-todo-dlg-btn');
 
 //operate dialog window
 const formDialog = () => {
-    newTodoFormDlg.append(formElements());
     newTodoFormBtn.addEventListener('click', () => {
+        newTodoFormDlg.innerHTML = '';
+        newTodoFormDlg.append(formElements());
         newTodoFormDlg.showModal();
     })
 }
