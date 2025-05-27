@@ -70,6 +70,13 @@ header, footer {
     box-shadow: 2px 2px 3px #999;
 }
 
+#new-project-btn {
+    justify-self: center;
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 2px 2px 3px;
+}
+
 #new-todo-form-dlg {
     position: absolute;
     top: 50%;

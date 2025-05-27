@@ -1,12 +1,20 @@
 import { getList } from "./list-management";
-import { setProject } from "./projects";
+import { setProject, createNewProject } from "./projects";
 import { renderList } from "./render";
 // import { getProjectsArray } from "./projects";
 
-const sidebarDiv = document.querySelector('#sidebar');
+// const sidebarDiv = document.querySelector('#sidebar');
+const newProjectBtn = document.querySelector('#new-project-btn');
+
+newProjectBtn.addEventListener('click', () => {
+    const newProject = prompt('What will the new Project be called?');
+    createNewProject(newProject);
+})
 
 //RENDER AN UNORDERED LIST OF THE ENTIRE PROJECT ARRAY
 function renderProjectList(array) {
+    const sidebarDiv = document.querySelector('#sidebar');
+    sidebarDiv.innerHTML = '';
     const projectList = document.createElement('ul');
     projectList.id = 'project-list';
     projectList.innerHTML = '';

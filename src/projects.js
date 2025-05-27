@@ -17,4 +17,4 @@ function createNewProject(newProject) {
     renderProjectList(getProjectsArray());
 }
 
-export { getProjectsArray, setProject, getSelectedProject };
+export { getProjectsArray, setProject, getSelectedProject, createNewProject };
