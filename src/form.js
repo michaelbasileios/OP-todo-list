@@ -1,5 +1,6 @@
-import { addToList } from "./list-management";
+import { addToList, getList } from "./list-management";
 import { getProjectsArray } from "./projects";
+import { renderList } from "./render";
 
 const newTodoFormDlg = document.querySelector('#new-todo-form-dlg');
 const newTodoFormBtn = document.querySelector('#new-todo-dlg-btn');
@@ -99,7 +100,8 @@ const form = (editTodo) => {
         });
         }
         newTodoFormDlg.close();
-        todoForm.reset(); 
+        todoForm.reset();
+        renderList(getList()); 
     })
 
     todoForm.append(
@@ -114,55 +116,4 @@ const form = (editTodo) => {
     return todoForm;
 }
 
-// const formElements = () => {
-//     // const todoForm = document.createElement('form');
-//     // todoForm.id = 'todo-form';
-//     // todoForm.method = 'dialog';
-    
-//     const formTitleLabel = document.createElement('label');
-//     formTitleLabel.textContent = 'Title';
-//     const formTitleInput = document.createElement('input');
-//     formTitleInput.type = 'text';
-//     formTitleInput.classList.add('form-input-field');
-//     formTitleInput.name = 'todo-title';
-//     formTitleLabel.append(formTitleInput);
-
-//     const formDescriptionLabel = document.createElement('label');
-//     formDescriptionLabel.textContent = 'Description';
-//     const formDescriptionInput = document.createElement('input');
-//     formDescriptionInput.type = 'text';
-//     formDescriptionInput.classList.add('form-input-field');
-//     formDescriptionInput.name = 'todo-description';
-//     formDescriptionLabel.append(formDescriptionInput);
-
-//     const formPriorityLabel = document.createElement('label');
-//     formPriorityLabel.textContent = 'Priority';
-//     const formPriorityInput = document.createElement('input');
-//     formPriorityInput.type = 'number';
-//     formPriorityInput.classList.add('form-input-field');
-//     formPriorityInput.name = 'todo-priority';
-//     formPriorityLabel.append(formPriorityInput);
-
-//     const formProjectLabel = document.createElement('label');
-//     formProjectLabel.textContent = 'Project';
-//     const formProjectInput = document.createElement('select');
-//     formProjectInput.classList.add('form-input-field');
-//     formProjectInput.name = 'projects';
-//     const projectList = getProjectsArray();
-//     projectList.forEach(project => {
-//         const projectOption = document.createElement('option');
-//         projectOption.value = project;
-//         projectOption.textContent = project;
-//         formProjectInput.append(projectOption);
-//     })
-//     formProjectLabel.append(formProjectInput);
-
-//     // todoForm.append(
-//     //     formTitleLabel, 
-//     //     formDescriptionLabel, 
-//     //     formPriorityLabel,
-//     //     formProjectLabel,
-//     //     );
-
-//}
 export { setupDialog, formDialog }
