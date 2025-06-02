@@ -1,6 +1,7 @@
-import { deleteTodoItem } from "./list-management";
+import { deleteTodoItem, getList } from "./list-management";
 import { setStatus } from "./list-management";
 import { getSelectedProject } from "./projects";
+import { formDialog } from "./form";
 
 //RENDER ARRAY OF TODOS ON PAGE
 function renderList(array) {
@@ -36,6 +37,13 @@ function generateHTMLElement(todoListObject, index) {
     })
     completionStatusLabel.append(compStatusCheckbox);
     
+    const editTodoBtn = document.createElement('button');
+    editTodoBtn.textContent = 'Edit';
+    editTodoBtn.classList.add('edit-todo-btn');
+    editTodoBtn.addEventListener('click', () => {
+        formDialog(getList()[index]);
+    });
+
     const deleteTodoItemBtn = document.createElement('button');
     deleteTodoItemBtn.textContent = 'X'
     deleteTodoItemBtn.classList.add('delete-todo-btn');
@@ -43,7 +51,7 @@ function generateHTMLElement(todoListObject, index) {
         deleteTodoItem(index);
     })
     
-    todoItemCard.append(completionStatusLabel, deleteTodoItemBtn);
+    todoItemCard.append(completionStatusLabel, editTodoBtn, deleteTodoItemBtn);
     
     return todoItemCard;
 }
