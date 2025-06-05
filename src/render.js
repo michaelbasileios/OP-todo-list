@@ -2,6 +2,7 @@ import { deleteTodoItem, getList } from "./list-management";
 import { setStatus } from "./list-management";
 import { getSelectedProject } from "./projects";
 import { formDialog } from "./form";
+import { format } from "date-fns";
 
 //RENDER ARRAY OF TODOS ON PAGE
 function renderList(array) {
@@ -70,9 +71,13 @@ function propertyCheck(property, value, todoItemCard) {
             todoItemCard.appendChild(descriptionElement);
             break;
         case "dueDate":
+            if (!value) {
+            } else {
             const dateElement = document.createElement('p');
-            dateElement.textContent = value;
+            const formattedDate = format(new Date(value), 'MMM d, yyyy');
+            dateElement.textContent = `Due Date: ${formattedDate}`;
             todoItemCard.appendChild(dateElement);
+            }
             break;
         case "Priority":
             const priorityElement = document.createElement('h3');
