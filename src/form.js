@@ -13,7 +13,6 @@ const setupDialog = () => {
 
 //operate dialog window
 const formDialog = (editTodo = null) => {
-    // newTodoFormBtn.addEventListener('click', () => {
         newTodoFormDlg.innerHTML = '';
         newTodoFormDlg.append(form(editTodo));
         newTodoFormDlg.showModal();
@@ -42,6 +41,15 @@ const form = (editTodo) => {
     formDescriptionInput.name = 'todo-description';
     formDescriptionInput.value = editTodo ? editTodo.Description : '';
     formDescriptionLabel.append(formDescriptionInput);
+
+    const formDateLabel = document.createElement('label');
+    formDateLabel.textContent = 'Due Date';
+    const formDateInput = document.createElement('input');
+    formDateInput.type = 'date';
+    formDateInput.classList.add('form-input-field');
+    formDateInput.name = 'todo-date';
+    formDateInput.value = editTodo ? editTodo.dueDate : '';
+    formDateLabel.append(formDateInput);
 
     const formPriorityLabel = document.createElement('label');
     formPriorityLabel.textContent = 'Priority';
@@ -88,12 +96,14 @@ const form = (editTodo) => {
         if (editTodo) {
             editTodo.Title = formTitleInput.value;
             editTodo.Description = formDescriptionInput.value;
+            editTodo.dueDate = formDateInput.value;
             editTodo.Priority = formPriorityInput.value;
             editTodo.Project = formProjectInput.value;
         } else {
             addToList({
             Title: formTitleInput.value,
             Description: formDescriptionInput.value,
+            dueDate: formDateInput.value,
             Priority: formPriorityInput.value,
             Completion: false,
             Project: formProjectInput.value, 
@@ -106,7 +116,8 @@ const form = (editTodo) => {
 
     todoForm.append(
         formTitleLabel, 
-        formDescriptionLabel, 
+        formDescriptionLabel,
+        formDateLabel, 
         formPriorityLabel,
         formProjectLabel, 
         formSubmitBtn,

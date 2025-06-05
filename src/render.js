@@ -69,6 +69,11 @@ function propertyCheck(property, value, todoItemCard) {
             descriptionElement.textContent = value;
             todoItemCard.appendChild(descriptionElement);
             break;
+        case "dueDate":
+            const dateElement = document.createElement('p');
+            dateElement.textContent = value;
+            todoItemCard.appendChild(dateElement);
+            break;
         case "Priority":
             const priorityElement = document.createElement('h3');
             priorityElement.textContent = value;
