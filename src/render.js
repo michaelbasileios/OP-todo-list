@@ -36,6 +36,8 @@ function generateHTMLElement(todoListObject, index) {
     compStatusCheckbox.addEventListener('change', () => {
         setStatus(index);
     })
+    todoListObject.Completion ? compStatusCheckbox.checked = true :
+        compStatusCheckbox.checked = false;
     completionStatusLabel.append(compStatusCheckbox);
     
     const editTodoBtn = document.createElement('button');
@@ -85,19 +87,23 @@ function propertyCheck(property, value, todoItemCard) {
             todoItemCard.appendChild(priorityElement);
             break;
          case "Completion":
-        //     const compStatusCheckbox = document.querySelector('.todo-status-checkbox');
-        //     completionStatusLabel.textContent = value ? "Complete" : "Incomplete";
-        //     const completionStatusElement = document.createElement('input');
-        //     completionStatusElement.type = 'checkbox';
-        //     completionStatusElement.name = 'completion-status-checkbox';
-        //     compStatusCheckbox.checked = value;
-        //     completionStatusLabel.append(completionStatusElement);
-        //     todoItemCard.append(completionStatusLabel);
-        //     break;
-        // default:
-        //     const defaultElement = document.createElement('div');
-        //     defaultElement.textContent = `${property}: ${value}`;
-        //     todoItemCard.appendChild(defaultElement);
+        //     if (!value) {
+        //     } else {
+
+        // //     const compStatusCheckbox = document.querySelector('.todo-status-checkbox');
+        // //     completionStatusLabel.textContent = value ? "Complete" : "Incomplete";
+        // //     const completionStatusElement = document.createElement('input');
+        // //     completionStatusElement.type = 'checkbox';
+        // //     completionStatusElement.name = 'completion-status-checkbox';
+        // //     compStatusCheckbox.checked = value;
+        // //     completionStatusLabel.append(completionStatusElement);
+        // //     todoItemCard.append(completionStatusLabel);
+        // //     break;
+        // // default:
+        // //     const defaultElement = document.createElement('div');
+        // //     defaultElement.textContent = `${property}: ${value}`;
+        // //     todoItemCard.appendChild(defaultElement);
+        //     }
     }
 }
 
