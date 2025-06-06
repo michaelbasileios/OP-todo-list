@@ -31,6 +31,7 @@ const form = (editTodo) => {
     formTitleInput.classList.add('form-input-field');
     formTitleInput.name = 'todo-title';
     formTitleInput.value = editTodo ? editTodo.Title : '';
+    formTitleInput.required = true;
     formTitleLabel.append(formTitleInput);
 
     const formDescriptionLabel = document.createElement('label');
